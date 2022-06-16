@@ -1,0 +1,72 @@
+{{ define "newpost" }}	
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Load Slowly</title>
+	<link rel="stylesheet" href="/static/css/style.css">
+	<link rel="stylesheet" href="/static/css/signin.css">
+	<link rel="stylesheet" href="static/css/contact.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic" rel="stylesheet" />
+</head>
+<body class="d-flex h-100 text-center text-white bg-dark">  
+	<div class="container d-flex w-100 h-100 p-3 mx-auto flex-column">
+	  <header class="mb-auto">
+		 <div>
+			<h3 id="logo" class="float-md-start mb-0 ">Beatstore</h3>
+			<nav class="nav nav-masthead justify-content-center float-md-end">
+			  <a class="nav-link" aria-current="page" href="/feed">Home</a>
+			  <a class="nav-link" href="/beats">Beats</a>
+			  <a class="nav-link" href="/contact">Contact</a>
+			  <a class="nav-link" href="/newpost">Post</a>
+			  <a class="nav-link" href="/profile/{{.Username}}">{{.Username}}</a>
+			</nav>
+		 </div>
+	  </header>
+	<main class="form-registration">
+		<div class="container">
+			<h3 class="mb-3">New beat post</h3>
+			<form class="needs-validation" action="/save_post" method="post">
+			  <div class="row g-3">
+				<div class="col-12">
+					<label for="title" class="form-label">Title of beat</label>
+					<div class="input-group has-validation">
+					<input type="text" class="form-control" id="title" name="title"  placeholder="title">
+					<div class="invalid-feedback">
+						 Your title of beat is required.
+					  </div>
+					</div>
+				 </div>
+
+				 <div class="col-12">
+					<label for="text" class="form-label">Beat<span class="text-muted"></span></label>
+					<div class="input-group has-validation"></div>
+					<input type="text" name="beat" class="form-control" id="beat" placeholder="input url mp3 file">
+					<div class="invalid-feedback">
+					  Please enter a valid email address for shipping updates.
+					</div>
+				 </div>
+
+				 <div class="col-12">
+					<label for="text" class="form-label">Poster<span class="text-muted"></span></label>
+					<div class="input-group has-validation"></div>
+					<input type="text" name="poster" class="form-control" id="poster" placeholder="input url image file">
+					<div class="invalid-feedback">
+					  Please enter a valid poster file.
+					</div>
+				 </div>
+
+			  <hr class="my-4">
+ 
+			  <button class="w-100 btn btn-success btn-lg" type="submit">Сonfirm</button>
+			</form>
+		 </div>
+	</main>
+
+	{{ template "footer"}}
+	
+{{ end }}	 

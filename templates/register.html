@@ -1,0 +1,52 @@
+{{ define "register" }}	
+
+{{ template "header"}}
+	<main class="form-registration">
+		<div class="container">
+			<h3 class="mb-3">Registration</h3>
+			<form class="needs-validation" action="/save_article" method="post" novalidate="">
+			  <div class="row g-3">
+
+				<div class="col-12">
+					<label for="username" class="form-label">Username</label>
+					<div class="input-group has-validation">
+					  <input type="text" class="form-control" id="username" name="username"  placeholder="Username" required="">
+					<div class="invalid-feedback">
+						 Your username is required.
+					  </div>
+					</div>
+				 </div>
+
+				 <div class="col-12">
+					<label for="email" class="form-label">Email <span class="text-muted"></span></label>
+					<input type="email" class="form-control" id="email" name="email" placeholder="you@example.com">
+					<div class="invalid-feedback">
+					  Please enter a valid email address for shipping updates.
+					</div>
+				 </div>
+
+				 <div class="col-12">
+					<label for="password" class="form-label">Password <span class="text-muted"></span></label>
+					<input type="password" class="form-control" id="password" name="password" placeholder="password">
+					<div class="invalid-feedback">
+					  Please enter a valid password.
+					</div>
+				 </div>
+
+				 <div class="col-12">
+					<label for="password" class="form-label">Password confirmation<span class="text-muted"></span></label>
+					<input type="password" class="form-control" id="password_conf" name="password_conf" placeholder="password confirmation">
+					<div class="invalid-feedback">
+					  Please enter a valid password.
+					</div>
+				 </div> 
+			  </div>
+  
+			  <hr class="my-4">
+ 
+			  <button class="w-100 btn btn-success btn-lg" type="submit">Сonfirm</button>
+			</form>
+		 </div>
+	</main>
+	  
+{{ end }}	 

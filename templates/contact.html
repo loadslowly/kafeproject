@@ -1,0 +1,74 @@
+{{ define "contact" }}	
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Kafe Appetit</title>
+	<link rel="stylesheet" href="static/css/style.css">
+	<link rel="stylesheet" href="static/css/signin.css">
+	<link rel="stylesheet" href="static/css/contact.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+	<script src="static/js/playerjs.js" type="text/javascript"></script>
+	<link href="https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic" rel="stylesheet" />
+</head>
+<body class="d-flex h-100 text-center text-white">  
+	<div class="container d-flex w-100 h-100 p-3 mx-auto flex-column">
+		<header class="contact">
+			<div>
+				<h3 id="logo" class="float-md-start mb-0 ">Kafe Appetit</h3>
+				<nav class="nav nav-masthead justify-content-center float-md-end">
+					{{if .StatusReg }} 
+					<a class="nav-link" aria-current="page" href="/feed">Home</a>
+					{{else}} 
+					<a class="nav-link" aria-current="page" href="/">Home</a>
+					{{end}}
+					<a class="nav-link" href="/recipes">Recipes</a>
+					<a class="nav-link" href="/contact">Contact</a>
+					{{if .StatusAdmin }}
+					<a class="nav-link" href="/newpost">Post</a>
+					{{end}}
+					{{if .StatusReg }} 
+							<a class="nav-link" href="/profile/{{.Username}}">{{.Username}}</a> 
+					{{else}} 
+							<a class="nav-link" href="/sign">Profile</a>
+					{{end}}
+				</nav>
+			</div>
+		</header>
+		<main>
+			<div class="row text-dark">
+				<div class="col-lg-3">
+				<a href="#"><img src="/static/img/instagram.png" width="140" height="140" alt=""></a>
+
+				<h2>Instagram</h2>
+				<p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
+				<p><a class="btn btn btn-dark" href="#">Subscribe</a></p>
+				</div>
+				<div class="col-lg-3">
+					<a href="#"><img src="/static/img/telegram.png" width="140" height="140" alt=""></a>
+		
+					<h2>Telegram</h2>
+					<p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
+					<p><a class="btn btn btn-dark" href="#" >Subscribe</a></p>
+				</div>
+				<div class="col-lg-3">
+					<a href="#""><img src="/static/img/youtube.png" width="140" height="140" alt=""></a>
+		
+					<h2>Youtube</h2>
+					<p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
+					<p><a class="btn btn btn-dark" href="#">Subscribe »</a></p>
+				</div>
+				<div class="col-lg-3">
+					<a href="#"><img src="/static/img/vk.png" width="140" height="140" alt=""></a>
+		
+					<h2>Vkontakte</h2>
+					<p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
+					<p><a class="btn btn-dark" href="#" >Subscribe</a></p>
+				</div>
+			</div>
+		</main>
+
+{{ end }}	
